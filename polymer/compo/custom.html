@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Web Component</title>
+    <link rel="import" href="element/shadowrow.html">
+  </head>
+  <style>
+    table.cobi-table {
+      border-collapse: separate;
+      border-spacing: 1px;
+      text-align: center;
+      line-height: 1.5;
+      margin: 20px 10px;
+    }
+    table.cobi-table th {
+      width: 155px;
+      padding: 10px;
+      font-weight: bold;
+      vertical-align: top;
+      color: #fff;
+      background: #ce4869 ;
+    }
+    table.cobi-table td {
+      width: 155px;
+      padding: 10px;
+      vertical-align: top;
+      border-bottom: 1px solid #ccc;
+      background: #eee;
+    }
+  </style>
+  <body>
+    <button onclick="test();">게시글 작성</button>
+    <button onclick="attach();">shadow</button>
+    <table class="cobi-table">
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>hit</th>
+        </tr>
+      </thead>
+      <tbody id="rows">
+
+      </tbody>
+    </table>
+
+    <table class="cobi-table">
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>hit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="clk">
+            <td class="title">내용1</td>
+            <td>내용2</td>
+            <td>내용3</td>
+        </tr>
+        <tr class="clk">
+            <td class="title">내용1</td>
+            <td>내용2</td>
+            <td>내용3</td>
+        </tr>
+        <tr class="clk">
+            <td class="title">내용1</td>
+            <td>내용2</td>
+            <td>내용3</td>
+        </tr>
+      </tbody>
+    </table>
+    <custom-element></custom-element>
+  </body>
+  <script>
+    var root = document.querySelector('#rows').createShadowRoot();
+    var custom = Object.create(HTMLElement.prototype);
+    //element 상속하여 object생성
+    custom.createdCallback = function() {//생성 콜백 지정
+      var shadow = this.createShadowRoot();
+      //생성시 자신에게 쉐도우돔 생성
+      var link = document.querySelector('link[rel=import]');
+      var t = link.import.querySelector('#cobi-template');
+      var clone = document.importNode(t.content, true);
+      shadow.appendChild(clone);
+    };
+    custom.attachedCallback = function() {  //실제 첨부되었을때 콜백
+      alert('attached');
+    };
+    var XFoo = document.registerElement('custom-element',{prototype:custom});
+    //엘리먼트 등록
+
+    var attach = function(){
+      var custom = document.createElement("custom-element");
+      document.querySelector('body').appendChild(custom);
+    }
+
+    var test = function(){
+      var link = document.querySelector('link[rel=import]');
+      var t = link.import.querySelector('#cobi-template');
+      var clone = document.importNode(t.content, true);
+      root.appendChild(clone);
+    };
+
+  </script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button onclick="test()">test button</button>
+
+
+    <table border="1" id="testtable">
+
+    </table>
+
+    <table border="1">
+      <tr class="cobi">
+        <td id="ck">test</td>
+        <td>test1</td>
+        <td>test2</td>
+      </tr>
+      <div id="rows"></div>
+    </table>
+
+
+    <template id="mytemplate">
+      <style>
+        .cobi{
+          background-color:blue;
+        }
+      </style>
+      <tr class="cobi">
+        <td id="ck">123</td>
+        <td>1234</td>
+        <td>123444</td>
+      </tr>
+    </template>
+
+  </body>
+  <script>
+  // var test = function(){
+  //   var t = document.querySelector('#mytemplate');
+  //   var clone = document.importNode(t.content, true);
+  //   document.querySelector('#testtable').appendChild(clone);
+  // };
+  var test = function(){
+    var root = document.querySelector('#testtable');
+    if(root.shadowRoot === root){
+      console.log('note created');
+      root.createShadowRoot();
+    }
+    var t = document.querySelector('#mytemplate');
+    var clone = document.importNode(t.content, true);
+    root.appendChild(clone);
+  };
+  </script>
+</html>

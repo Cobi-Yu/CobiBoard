@@ -1,0 +1,21 @@
+th, td {
+	text-align: center;
+}
+
+table#t01 th {
+	background-color: black;
+	color: white;
+}
+
+.title{
+	text-align:left;
+}
+
+.page_title{
+	margin-left: 15%; 
+	margin-bottom:0px;
+}
+
+.paging{
+	text-align:center;
+}

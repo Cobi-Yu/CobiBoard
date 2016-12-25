@@ -1,0 +1,25 @@
+{
+  "list": [
+      {
+          "board_id": "90",
+          "title": "data json title 90",
+          "writer": "5",
+          "hit": "13",
+          "depth": "0"
+      },
+      {
+          "board_id": "100",
+          "title": "data json title 100",
+          "writer": "1",
+          "hit": "44",
+          "depth": "0"
+      },
+      {
+          "board_id": "110",
+          "title": "data json title 110",
+          "writer": "aa",
+          "hit": "441",
+          "depth": "0"
+      }
+  ]
+}

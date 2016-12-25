@@ -1,0 +1,25 @@
+<div class="gt-paging" style="padding-top:60px">
+    <span class="gt-paging-inner" data-ng-if="boardListData.prevBool" data-ng-click="changePage('begin')">
+      <a class="gt-paging-nav gt-paging-prev gt-paging-num">
+        <i class="gt-ios-arrow-back"></i><i class="gt-ios-arrow-back"></i>
+      </a>
+      <a class="gt-paging-nav gt-paging-prev gt-paging-num" ng-click="changePage('prev')">
+        <i class="gt-ios-arrow-back"></i>
+      </a>
+    </span>
+
+    <span class="gt-paging-inner" ng-repeat="page in boardListData.paging">
+      <em class="gt-paging-num" data-ng-if="boardListData.currentPage == page" data-ng-bind="page"></em>
+      <a class="gt-paging-num" data-ng-if="boardListData.currentPage != page" data-ng-bind="page" data-ng-click="changePage(page)"></a>
+    </span>
+
+    <span class="gt-paging-inner" data-ng-if="boardListData.nextBool">
+      <a class="gt-paging-nav gt-paging-next gt-paging-num" ng-click="changePage('next')">
+        <i class="gt-ios-arrow-forward"></i>
+      </a>
+      <a class="gt-paging-nav gt-paging-next gt-paging-num" data-ng-click="changePage('last')">
+        <i class="gt-ios-arrow-forward"></i>
+        <i class="gt-ios-arrow-forward"></i>
+      </a>
+    </span>
+</div>

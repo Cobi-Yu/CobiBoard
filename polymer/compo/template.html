@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Web Component</title>
+  </head>
+  <style>
+    table.cobi-table {
+      border-collapse: separate;
+      border-spacing: 1px;
+      text-align: center;
+      line-height: 1.5;
+      margin: 20px 10px;
+    }
+    table.cobi-table th {
+      width: 155px;
+      padding: 10px;
+      font-weight: bold;
+      vertical-align: top;
+      color: #fff;
+      background: #ce4869 ;
+    }
+    table.cobi-table td {
+      width: 155px;
+      padding: 10px;
+      vertical-align: top;
+      border-bottom: 1px solid #ccc;
+      background: #eee;
+    }
+  </style>
+  <body>
+    <button onclick="insert();">게시글 작성</button>
+    <table id="cobi-table" class="cobi-table">
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>hit</th>
+        </tr>
+      </thead>
+      <tbody id="rows">
+
+      </tbody>
+    </table>
+
+    <table id="cobi-table" class="cobi-table">
+      <thead>
+        <tr>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>hit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td class="title">내용1</td>
+            <td class="title">내용2</td>
+            <td class="title">내용3</td>
+        </tr>
+        <tr>
+            <td class="title">내용1</td>
+            <td class="title">내용2</td>
+            <td class="title">내용3</td>
+        </tr>
+        <tr>
+            <td class="title">내용1</td>
+            <td class="title">내용2</td>
+            <td class="title">내용3</td>
+        </tr>
+      </tbody>
+    </table>
+
+  <template id="cobi-template">
+    <tr>
+        <td>내용1</td>
+        <td>내용2</td>
+        <td>내용3</td>
+    </tr>
+  </template>
+
+  </body>
+  <script>
+
+    var insert = function(){
+      var t = document.querySelector('#cobi-template');
+      var clone = document.importNode(t.content, true);
+      document.querySelector('#rows').appendChild(clone);
+    };
+
+  </script>
+</html>

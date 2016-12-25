@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+li {
+	float: left;
+	margin-left: 15%;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+table {
+	width: 70%;
+	margin: 0px 15%;
+}	
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 5px;
+}
+
+.category {
+	width: 20%;
+	text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+	<ul>
+		<li><a href="#home"><h3>YHH's Board</h3></a></li>
+	</ul>
+
+	<h2 style="margin-left: 15%;">게시물 등록</h2>
+	<form method="post" action="#">
+		<table id="t01">
+			<tr>
+				<td class="category">제목</td>
+				<td class="input">
+					<input type="text" id="title" size="50">
+				</td>
+			</tr>
+			<tr>
+				<td class="category">게시자</td>
+				<td>
+					<input type="text" id="writer">
+				</td>
+			</tr>
+			<tr>
+				<td class="category">내용</td>
+				<td>
+					<textarea rows="10" style="width:99%;"></textarea>
+				</td>
+			</tr>
+		</table>
+	
+		<div style="text-align:right; margin: 5px 15%;">
+			<div>비밀번호 : <input type = "password" id="password"></div>
+			<button style="margin-top: 9px;">등록하기</button>
+		</div>
+	</form>
+
+</body>
+</html>

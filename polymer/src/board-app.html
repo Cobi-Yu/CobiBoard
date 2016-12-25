@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="../bower_components/polymer/polymer.html" rel="import">
+	<link href="../bower_components/paper-toolbar/paper-toolbar.html" rel="import">
+	<link href="../bower_components/paper-datatable/paper-datatable.html" rel="import">
+	<link href="../bower_components/iron-ajax/iron-ajax.html" rel="import">
+	<link href="../bower_components/paper-button/paper-button.html" rel="import">
+	<link href="cobi-table.html" rel="import">
+</head>
+
+<dom-module id="board-app">
+
+	<template>
+		<iron-ajax
+		id="getByAjax"
+		url="../data.json"
+		handle-as="json"
+		on-response="handleResponse"
+		last-response="{{obj}}">
+	</iron-ajax>
+
+
+		<paper-toolbar>
+			<paper-item>Cobi's Table</paper-item>
+		</paper-toolbar>
+
+		<paper-button raised class="indigo" on-click="getData">raised</paper-button>
+
+		<h1>Cobi's table</h1>
+    <cobi-table data="{{obj.list}}"></cobi-table>
+
+		<h1>paper-datatable</h1>
+		<paper-datatable data="{{obj.list}}" selectable multi-selection>
+		    <paper-datatable-column header="제목" property="title" sortable></paper-datatable-column>
+		    <paper-datatable-column header="작성자" property="writer" sortable></paper-datatable-column>
+		    <paper-datatable-column header="hit" property="hit" sortable></paper-datatable-column>
+		</paper-datatable>
+	</template>
+
+	<script>
+		// element registration
+		Polymer({
+			is: "board-app",
+			getData : function(e){
+				this.$.getByAjax.generateRequest();
+			},
+			properties : {
+				label: {
+					type:'String',
+					value : 'This is Test Data'
+				}
+				,
+				obj: {
+					type:'Array',
+					value :
+						{
+					    "list":
+								[
+					        {
+					            "board_id": "77",
+					            "title": "title 77",
+					            "writer": "5",
+					            "hit": "64",
+					            "depth": "0"
+					        },
+					        {
+					            "board_id": "56",
+					            "title": "title 56",
+					            "writer": "1",
+					            "hit": "40",
+					            "depth": "0"
+					        },
+									{
+					            "board_id": "16",
+					            "title": "title 16",
+					            "writer": "aa",
+					            "hit": "293",
+					            "depth": "0"
+					        },
+									{
+					            "board_id": "11",
+					            "title": "title 11",
+					            "writer": "tt",
+					            "hit": "33",
+					            "depth": "0"
+					        }
+						    ]
+						}
+				}
+			}
+		});
+	</script>
+</dom-module>

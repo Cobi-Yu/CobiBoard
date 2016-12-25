@@ -1,0 +1,55 @@
+<!-- http://soomtong.github.io/steps-in-node/2015/09/19/polymer-submit-2015-2/ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="../bower_components/polymer/polymer.html" rel="import">
+	<link href="../bower_components/paper-input/paper-input.html" rel="import">
+	<link href="../bower_components/iron-ajax/iron-ajax.html" rel="import">
+</head>
+
+
+<dom-module id="board-element">
+  <template>
+		<iron-ajax auto url="/data.json" last-response="{{label}}"></iron-ajax>
+    <div id="label">{{label}}</div>
+    <paper-input value="{{label}}">
+  </template>
+  <script>
+    Polymer({
+      is: 'board-element',
+			properties: {
+        label: {
+          type: 'String' // String, Number, Boolean, Object 등을 지정할 수 있음
+        }
+      }
+    });
+  </script>
+</dom-module>
+
+
+
+
+
+
+<!--
+<dom-module id="board-element">
+  <template>
+    <div id="label"></div>
+    <input id="input" value="{{label}}" on-input="intputHandler">
+  </template>
+  <script>
+    Polymer({
+      is: 'board-element',
+			properties: {
+        label: {
+          type: 'String', // String, Number, Boolean, Object 등을 지정할 수 있음
+          observer: '_labelChanged' // 앞에 붙는 언더스코어는 컨벤션
+        }
+      },
+			intputHandler : function(e){
+				console.log(e.target.value);
+				this.$.label.textContent = e.target.value;
+			}
+    });
+  </script>
+</dom-module> -->

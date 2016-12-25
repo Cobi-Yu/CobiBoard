@@ -1,0 +1,54 @@
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+li {
+	float: left;
+	margin-left: 15%;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+table {
+	width: 70%;
+	margin: 0px 15%;
+}	
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 5px;
+}
+
+.category {
+	width: 20%;
+	text-align: center;
+}
+
+.page_title{
+	margin-left: 15%; 
+	margin-bottom:20px;
+}
+
+caption{
+	margin-bottom:5px;
+	text-align:right;
+}
+
+.bottom-btn{
+	text-align:right; 
+	margin: 5px 15%;
+}

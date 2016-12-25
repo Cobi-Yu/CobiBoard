@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="import" href="name.html"/>
+  </head>
+  <body>
+
+  <script>
+    var link = document.querySelector('link[rel="import"]');
+    var content = link.import;
+
+    // Grab DOM from warning.html's document.
+    var el = content.querySelector('.warning');
+
+    document.body.appendChild(el.cloneNode(true));
+  </script>
+
+
+
+    <!-- <template>
+<style>
+  :host {
+    background: #f8f8f8;
+    padding: 10px;
+    transition: all 400ms ease-in-out;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 450px;
+    max-width: 100%;
+  }
+  :host(:hover) {
+    background: #ccc;
+  }
+  div {
+    position: relative;
+  }
+  header {
+    padding: 5px;
+    border-bottom: 1px solid #aaa;
+  }
+  h3 {
+    margin: 0 !important;
+  }
+  textarea {
+    font-family: inherit;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+  }
+  footer {
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+  }
+</style>
+<div>
+  <header>
+    <h3>댓글을 추가하세요.</h3>
+  </header>
+  <content select="p"></content>
+  <textarea></textarea>
+  <footer>
+    <button>Post</button>
+  </footer>
+</div>
+</template>
+
+<div id="host">
+  <p>설명은 여기에 위치합니다.</p>
+</div>
+
+<script>
+  var shadow = document.querySelector('#host').createShadowRoot();
+  shadow.appendChild(document.querySelector('template').content);
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <button onclick="useIt()">Use me</button>
+    <div id="container"></div>
+    <script>
+      function useIt() {
+        var content = document.querySelector('template').content;
+        // 템플릿 DOM에서 뭔가를 갱신합니다.
+        var span = content.querySelector('span');
+        span.textContent = parseInt(span.textContent) + 1;
+        document.querySelector('#container').appendChild(
+          document.importNode(content, true)
+        );
+      }
+    </script>
+
+    <template>
+      <div>Template used: <span>0</span></div>
+      <script>alert('Thanks!')</script>
+    </template> -->
+
+
+
+
+  <!-- <template id="nameTagTemplate">
+  <style>
+    .outer {
+    border: 2px solid brown;
+    border-radius: 1em;
+    background: red;
+    font-size: 20pt;
+    width: 12em;
+    height: 7em;
+    text-align: center;
+    }
+    .boilerplate {
+    color: white;
+    font-family: sans-serif;
+    padding: 0.5em;
+    }
+    .name {
+    color: black;
+    background: white;
+    font-family: "Marker Felt", cursive;
+    font-size: 45pt;
+    padding-top: 0.2em;
+    }
+  </style>
+  <div class="outer">
+    <div class="boilerplate">
+      Hi! My name is
+    </div>
+    <div class="name">
+      <content></content>
+    </div>
+  </div>
+  </template>
+
+  <div id="nameTag">Cobi</div>
+  </body>
+  <script>
+    var shadow = document.querySelector('#nameTag').createShadowRoot();
+    var template = document.querySelector('#nameTagTemplate');
+    var clone = document.importNode(template.content, true);
+    shadow.appendChild(clone);
+    document.querySelector('#nameTag').textContent = document.querySelector('#nameTag').textContent;
+  </script> -->
+</html>

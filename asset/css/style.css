@@ -1,0 +1,18 @@
+
+/*reset*/
+.gt-hide { display: none; }
+.gt-blind { overflow: hidden; position: absolute; width: 0; height: 0; line-height: 0; text-indent: -9999px; }
+/*gtis-paging*/
+
+.gt-paging { text-align: center; line-height: normal; }
+.gt-paging > .gt-paging-inner { overflow: hidden; display: inline-block; margin: 0 auto; }
+.gt-paging > .gt-paging-inner > .gt-paging-num, .gt-paging > .gt-paging-inner > .gt-paging-nav { float: left; font-size: 12px; color: #000; min-width: 30px; line-height: 30px; -webkit-transition-duration: 0s; transition-duration: 0s; cursor: pointer; }
+.gt-paging > .gt-paging-inner > em.gt-paging-num, .gt-paging > .gt-paging-inner > em.gt-paging-num:hover { color: #fff; background-color: #1f8dd6; }
+.gt-paging > .gt-paging-inner > .gt-paging-num:hover, .gt-paging > .gt-paging-inner .gt-paging-num:active { color: #000; background-color: #f4f4f4; cursor:pointer; }
+.gt-paging > .gt-paging-inner > .gt-paging-nav:hover, .gt-paging > .gt-paging-inner .gt-paging-nav:active { background-color: #f4f4f4; }
+.gt-paging > .gt-paging-inner .gt-paging-disabled, .gt-paging > .gt-paging-inner .gt-paging-disabled:hover, .gt-paging > .gt-paging-inner .gt-paging-disabled:focus, .gt-paging > .gt-paging-inner .gt-paging-disabled:active { cursor: not-allowed; background-color: #fff; opacity: 0.2; filter: alpha(opacity=20); }
+/*ionicons*/
+@font-face { font-family: "Ionicons"; src: url("https://static.gabia.com/libs/gtris/1.0.0/fonts/ionicons.eot?v=2.0.0"); src: url("https://static.gabia.com/libs/gtris/1.0.0/fonts/ionicons.eot?v=2.0.0#iefix") format("embedded-opentype"), url("https://static.gabia.com/libs/gtris/1.0.0/fonts/ionicons.ttf?v=2.0.0") format("truetype"), url("https://static.gabia.com/libs/gtris/1.0.0/fonts/ionicons.woff?v=2.0.0") format("woff"), url("https://static.gabia.com/libs/gtris/1.0.0/fonts/ionicons.svg?v=2.0.0#Ionicons") format("svg"); font-weight: normal; font-style: normal; }
+.gt-ios-arrow-back:before, .gt-ios-arrow-down:before, .gt-ios-arrow-forward:before, .gt-ios-arrow-left:before, .gt-ios-arrow-right:before, .gt-ios-arrow-thin-down:before, .gt-ios-arrow-thin-left:before, .gt-ios-arrow-thin-right:before, .gt-ios-arrow-thin-up:before, .gt-ios-arrow-up:before{ display: inline-block; font-family: "Ionicons"; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; text-rendering: auto; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.gt-ios-arrow-back:before { content: ""; }
+.gt-ios-arrow-forward:before { content: ""; }

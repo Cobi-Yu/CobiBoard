@@ -1,0 +1,50 @@
+.reply_table{
+	border: none;
+}
+
+.reply_writer_td{
+	width:30%;
+	/* border: none; */
+}
+
+.reply_content_td{
+	width:60%;
+	/* border: none; */
+}
+
+.reply_btn{
+	border: none;
+}
+
+.reg_date{
+	font-size: small;
+}
+
+.reply_write_table{
+	text-align:center;
+}
+
+.delete_reply{
+	float:right;
+	cursor:pointer;
+}
+
+#reply_input_content{
+	width:99%;
+}
+
+#write_reply{
+	width:60px;
+}
+
+#reply_input_writer{
+	width:99%;
+}
+
+.control_btn{
+	margin-top: 9px;
+}
+
+.reply-count{
+	float: left;
+}
